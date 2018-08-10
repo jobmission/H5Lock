@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>H5lock</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+            /*background-color: #000000;*/
+        }
+
+        .title {
+            /*color: #87888a;*/
+            margin-top: 85px;
+            font-size: 20px;
+            font-weight: lighter;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h4 id="title" class="title" style="color:#333333;">请绘制您的图形码</h4>
+    <canvas id="unlock"></canvas>
+</div>
+
+<script type="text/javascript" src="H5lock-0.1.js"></script>
+<script type="text/javascript">
+    new H5lock({
+        rows: 3,
+        width: 180,
+        height: 180,
+        canvasId: 'unlock',
+        callBack: function (data) {
+            console.log("in callback \n" + JSON.stringify(data, null, 2));
+        }
+    }).init();
+</script>
+</body>
+</html>
